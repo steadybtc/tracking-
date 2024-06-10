@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Result</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .tracking-status {
+            font-size: 1.2rem;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .step {
+            text-align: center;
+            flex: 1;
+        }
+        .step .icon {
+            font-size: 24px;
+            color: #007bff;
+        }
+        .step .text {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .step.active .icon,
+        .step.completed .icon {
+            color: #28a745;
+        }
+        .step.completed .icon::after {
+            content: '\2713';
+            color: #fff;
+            background-color: #28a745;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        .step:not(:last-child)::after {
+            content: '';
+            height: 3px;
+            background-color: #ddd;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+        }
+        .step.completed::after,
+        .step.active::after {
+            background-color: #28a745;
+        }
+        .step-content {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid #007bff;
+        }
+        .step.active .step-content,
+        .step.completed .step-content {
+            border-color: #28a745;
+            background-color: #28a745;
+            color: #fff;
+        }
+        .list-group-item {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Shipment Tracking</h2>
+                <div class="tracking-status text-center mb-4">
+                    Tracking Code: <strong>#usps/gloriasalmeropackagegd</strong>
+                </div>
+                <div class="steps">
+                    <div class="step completed">
+                        <div class="icon">📦</div>
+                        <div class="text">Order Placed</div>
+                    </div>
+                    <div class="step completed">
+                        <div class="icon">🚚</div>
+                        <div class="text">Shipped</div>
+                    </div>
+                    <div class="step active">
+                        <div class="icon">🚛</div>
+                        <div class="text">In Transit</div>
+                    </div>
+                    <div class="step">
+                        <div class="icon">🏠</div>
+                        <div class="text">Out for Delivery</div>
+                    </div>
+                    <div class="step">
+                        <div class="icon">📬</div>
+                        <div class="text">Delivered</div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h5>Shipment Details</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">Shipment Date: June 5, 2024</li>
+                        <li class="list-group-item">Estimated Delivery: June 15, 2024</li>
+                        <li class="list-group-item">Courier: USPS</li>
+                        <li class="list-group-item">Tracking Code: #usps/gloriasalmeropackagegd</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

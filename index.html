@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Track Your Shipment</h2>
+                <form id="tracking-form">
+                    <div class="form-group">
+                        <label for="tracking-code">Enter your tracking code:</label>
+                        <input type="text" id="tracking-code" name="tracking-code" class="form-control" required placeholder="e.g., #usps/gloriasalmeropackagegd">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Track</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('tracking-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const trackingCode = document.getElementById('tracking-code').value;
+            if (trackingCode === "#usps/gloriasalmeropackagegd") {
+                window.location.href = "tracking.html";
+            } else {
+                alert("Invalid tracking code. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
